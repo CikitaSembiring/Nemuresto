@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Food & Restaurants</title>
+
+    <!-- Link ke Font Awesome untuk ikon interaksi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #4f3a21;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .news-card {
+            background-color: white;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 15px;
+            flex: 1;
+        }
+        
+        .news-content h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+        
+        .news-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .news-content a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4f3a21;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .news-content a:hover {
+            background-color: #a35e3c;
+        }
+        
+        .news-interaction {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        /* .news-interaction div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .news-interaction div i {
+            margin-right: 5px;
+            color: #888;
+        }
+        .news-interaction div:hover i {
+            color: #a35e3c;
+        } */
+        
+        .news-interaction {
+            display: flex;
+            justify-content: flex-start;
+            /* Rapatkan elemen ke kiri */
+            gap: 10px;
+            /* Atur jarak antar elemen */
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .news-interaction div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin: 0;
+            /* Hapus margin untuk merapatkan */
+        }
+        
+        .news-interaction div i {
+            margin-right: 5px;
+            color: #888;
+        }
+        /* Popup styles */
+        /* Warna overlay */
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(79, 58, 33, 0.8);
+            /* Warna coklat tua dengan transparansi */
+            z-index: 999;
+        }
+       
+        
+        .back-home-container {
+            position: fixed;
+            /* Tetap berada di layar meskipun di-scroll */
+            bottom: 20px;
+            /* Jarak dari bawah */
+            right: 20px;
+            /* Jarak dari kanan */
+            z-index: 1000;
+            /* Agar tombol selalu di atas elemen lain */
+        }
+        
+        .back-home {
+            display: inline-block;
+            background-color: #8a4b45;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .back-home:hover {
+            background-color: #6b3f38;
+            transform: scale(1.1);
+            /* Efek zoom saat hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        News - Food & Restaurants
+    </header>
+
+    <div class="news-container">
+        <!-- Card 1 -->
+        <div class="news-card">
+            <img src="N1.jpg" alt="Restoran Fusion Unik">
+            <div class="news-content">
+                <h2><a href="https://food.detik.com/info-kuliner/d-7610559/food-vlogger-datang-bikin-video-pemilik-resto-ini-geram-dan-mengusirnya">Food Vlogger Datang Bikin Video, Pemilik Resto Ini Geram dan Mengusirnya! </a></h2>
+                <p>Pengalaman kurang menyenangkan dialami seorang food vlogger. Ia yang datang ke restoran sambil merekam video berakhir diusir karena pemilik restoran tidak suka.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="news-card">
+            <img src="N2.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2><a href="https://food.detik.com/info-kuliner/d-7577280/sedang-diet-tapi-kelaparan-pembeli-ini-titip-pesan-kocak-ke-restoran">Sedang Diet Tapi Kelaparan, Pembeli Ini Titip Pesan Kocak ke Restoran</a></h2>
+                <p>Sedang dalam proses diet tapi kelaparan, pembeli ini akhirnya titipkan pesan lucu yang membuat pemilik restoran tertawa.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="news-card">
+            <img src="N3.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2><a href="https://food.detik.com/info-kuliner/d-7587064/duh-5-bisnis-kuliner-bangkrut-gegara-ain-hingga-tak-mampu-bayar-listrik">Duh! 5 Bisnis Kuliner Bangkrut Gegara Ain hingga Tak Mampu Bayar Listrik</a></h2>
+                <p>Walaupun sudah berjuang keras tetapi sebagian orang masih belum bertemu kesuksesannya. Sampai-sampai beberapa bisnis kuliner ini bangkrut dengan alasan sepele.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="news-card">
+            <img src="N4.jpeg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2><a href="https://www.cnbcindonesia.com/entrepreneur/20240503185121-25-535656/buka-restoran-di-belanda-pembantu-asal-jawa-mendadak-kaya-raya">
+                Buka Restoran di Belanda, Pembantu Asal Jawa Mendadak Kaya Raya </a></h2>
+                <p>Kehidupan seperti roda berputar. Ada kalanya di atas, ada kalanya juga berada di bawah. Begitulah yang dialami Oesin, jongos atau pembantu asal Jawa yang menghabiskan sisa hidupnya di Belanda.</p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="news-card">
+            <img src="N5.jpeg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2><a href="https://www.kompas.com/food/read/2024/10/23/092700175/pengalaman-makan-di-restoran-baru-di-jakarta-pusat-bernuansa-eropa">
+                Pengalaman Makan di Restoran Baru di Jakarta Pusat, Bernuansa Eropa</a></h2>
+                <p>Kehidupan seperti roda berputar. Ada kalanya di atas, ada kalanya juga berada di bawah. Begitulah yang dialami Oesin, jongos atau pembantu asal Jawa yang menghabiskan sisa hidupnya di Belanda.</p>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="news-card">
+            <img src="BR6.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://food.detik.com/info-kuliner/d-7656232/ngeri-wanita-ini-temukan-belatung-saat-makan-steak-di-restoran.">
+                        Ngeri! Wanita Ini Temukan Belatung Saat Makan Steak di Restoran</a>
+                </h2>
+                <p>Kejadian mengerikan dialami wanita ini ketika makan di restoran, la memesan hidangan steak yang ternyata ada belatung di dalamnya!</p>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="news-card">
+            <img src="BR7.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://travel.detik.com/travel-news/d-7650022/ini-daftar-barang-kena-ppn-12-persen-yang-berlaku-1-januari-2025">
+                    Ini Daftar Barang Kena PPN 12 Persen yang Berlaku 1 Januari 2025</a>
+                </h2>
+                <p>Pemerintah akan menaikkan PPN menjadi 12 persen Mulai 1 Januari 2025, Traveler harus sadar dan mempersiapkan diri dengan mempelajarinya</p>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="news-card">
+            <img src="BR8.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://food.detik.com/info-kuliner/d-7634897/pindai-kode-qr-demi-es-krim-gratis-pengunjung-resto-ini-tertipu.">
+                        Pindai Kode QR Demi Es Krim Gratis, Pengunjung Resto Ini Tertipu</a>
+                </h2>
+                <p>Diiming-iming es krim gratis, pengunjung resto ini merasa tertipu usai pindai kode QR Kejadian ini berakhir dengan aduan ke pihak restoran dan berwajib.</p>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="news-card">
+            <img src="BR9.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://food.detik.com/info-kuliner/d-7619131/wow-5-tempat-makan-ini-berani-beri-gaji-besar-untuk-karyawannya">
+                        Wow! 5 Tempat Makan Ini Berani Beri Gaji Besar untuk Karyawannya</a>
+                </h2>
+                <p>Tak pelit mengeluarkan gaji untuk karyawannya, beberapa tempat makan ini tawarkan gaji besar setiap bulannya. Berapa ya nominalnya?</p>
+            </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="news-card">
+            <img src="BR10.jpg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://food.detik.com/info-kuliner/d-7424708/makan-di-resto-tepi-laut-pelanggan-ini-kaget-tagihannya-rp-10-juta">
+                        Makan di Resto Tepi Laut, Pelanggan Ini Kaget Tagihannya Rp 10 Juta!</a>
+                </h2>
+                <p>Kejadian tidak terduga dialami oleh pelanggan ini di restoran. la dan rekannya makan di resto tepi laut, tetapi siapa sangka tagihan makannya sampai 2 digit!</p>
+            </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="news-card">
+            <img src="BR11.jpeg" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://food.detik.com/info-kuliner/d-7665535/hobi-kuliner-titik-soeharto-suka-icip-icip-hingga-sukses-buka-resto">
+                        Hobi Kuliner Titik Soeharto, Suka Icip-icip hingga Sukses Buka Resto</a>
+                </h2>
+                <p>Mulai dari menjajal kuliner di Solo dan Yogyakarta, hingga membagikan resep masakan dan membuka Warung Kopi Klotok. Berikut fakta menarik Titiek Soeharto dengan dunia kuliner.</p>
+            </div>
+        </div>
+
+         <!-- Card 12 -->
+         <div class="news-card">
+            <img src="BR12.webp" alt="Restoran Seafood Terbaik">
+            <div class="news-content">
+                <h2>
+                    <a href="https://lifestyle.sindonews.com/read/1496655/156/15-makanan-paling-pedas-di-dunia-seblak-dari-indonesia-masuk-daftar-1733029969?_gl=1*1b64kr*_ga*bWlZZkhmMVdLbzh6R09SbURfa1NxOTVsZUZWR3o4ZXloTHVpcVIxLTZHMER2QTNHWmxYS3hhRVREOEVIdDUzeg..*_ga_2HRD8GFP7Y*MTczMzIyNTc2MC4xLjEuMTczMzIyNTc2MS4wLjAuMA">
+                        15 Makanan Paling Pedas di Dunia, Seblak dari Indonesia Masuk Daftar</a>
+                </h2>
+                <p>Makanan paling pedas di dunia menawarkan sensasi menggigit lidah yang menantang. Tentu saja rasa ini sudah tidak asing lagi bagi penggemar makanan pedas.</p>
+            </div>
+        </div>
+
+        <div class="back-home-container">
+            <a href="home.html" class="back-home">
+                <i class="fas fa-home"></i>
+            </a>
+            </div>
+    </div>
+
+    <script src="news.js"></script>
+</body>
+
+</html>

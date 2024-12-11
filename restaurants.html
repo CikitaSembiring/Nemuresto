@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Find Restaurants - NEMURESTO</title>
+    <style>
+        /* Colors and fonts */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f3a21;
+            margin-bottom: 30px;
+        }
+
+        .search-section {
+            background-color: #f4f2ef;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-section h2 {
+            color: #a35e3c;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0dcd6;
+            padding-bottom: 8px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .search-box select, 
+        .search-box input[type="text"],
+        .search-box button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            flex: 1;
+        }
+
+        .search-box button {
+            background-color: #a35e3c;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background-color: #8e5230;
+        }
+
+        .results-section {
+        margin-top: 20px;
+        }
+
+        .search-section .results-section h2 {
+        font-size: 20px;
+        color: #4f3a21;
+        margin-bottom: 10px;
+        }
+
+        /* tambahan */
+        .trending-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f2ef;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.trending-section h2 {
+    font-size: 22px;
+    color: #a35e3c;
+    margin-bottom: 15px;
+}
+        .restaurant-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .restaurant-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .restaurant-card h3 {
+            color: #a35e3c;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-card p {
+            color: #555;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .restaurant-card p span {
+            font-weight: bold;
+            color: #4f3a21;
+        }
+
+        .restaurant-card small {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .restaurant-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.restaurant-info a {
+    text-decoration: none;
+    color: #333;
+}
+
+.restaurant-info a:hover {
+    color: #b05d3c;
+}
+
+.restaurant-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.restaurant-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+        /* Button styling */
+        
+        .back-home-container {
+    position: fixed;
+    bottom: 20px; /* Jarak dari bawah */
+    right: 20px; /* Jarak dari kanan */
+    z-index: 1000; /* Tetap di atas elemen lain */
+}
+
+.back-home {
+    display: inline-block;
+    background-color: #8a4b45;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-home:hover {
+    background-color: #8e5230;
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+
+
+
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .search-box {
+                flex-direction: column;
+            }
+
+            .restaurant-card {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Find Restaurants</h1>
+
+        <!-- Restaurant Search Section -->
+        <div class="search-section">
+            <h2>Search for restaurants based on criteria</h2>
+            <form action="restaurant.php" method="POST">
+            <div class="search-box">
+                <select name="rating" id="rating">
+                    <option value="" disabled selected>Rating (5-3)</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                </select>
+                
+                <select name="location" id="location">
+                    <option value="" disabled selected>Select location</option>
+                    <option value="Medan Amplas">Medan Amplas</option>
+                    <option value="Medan Area">Medan Area</option>
+                    <option value="Medan Barat">Medan Barat</option>
+                    <option value="Medan Baru">Medan Baru</option>
+                    <option value="Medan Belawan">Medan Belawan</option>
+                    <option value="Medan Deli">Medan Deli</option>
+                    <option value="Medan Denai">Medan Denai</option>
+                    <option value="Medan Helvetia">Medan Helvetia</option>
+                    <option value="Medan Johor">Medan Johor</option>
+                    <option value="Medan Kota">Medan Kota</option>
+                    <option value="Medan Labuhan">Medan Labuhan</option>
+                    <option value="Medan Maimun">Medan Maimun</option>
+                    <option value="Medan Marelan">Medan Marelan</option>
+                    <option value="Medan Perjuangan">Medan Perjuangan</option>
+                    <option value="Medan Petisah">Medan Petisah</option>
+                    <option value="Medan Polonia">Medan Polonia</option>
+                    <option value="Medan Selayang">Medan Selayang</option>
+                    <option value="Medan Sunggal">Medan Sunggal</option>
+                    <option value="Medan Tembung">Medan Tembung</option>
+                    <option value="Medan Timur">Medan Timur</option>
+                    <option value="Medan Tuntungan">Medan Tuntungan</option>
+                </select>
+                
+                <select name="food-type" id="food-type">
+                    <option value="" disabled selected>Type of food</option>
+                    <option value="Indonesia Food">Indonesia Food</option>
+                    <option value="Asian Food">Asian Food</option>
+                    <option value="Western Food">Western Food</option>
+                    <option value="Mediterranean Food">Mediterranean food</option>
+                    <option value="Vegetarian Food">Vegetarian Food</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Desserts">Desserts</option>+
+                    <option value="Regional Typical Food">Regional Typical Food</option>
+                    <option value="Healthy food">Healthy food</option>
+                    <option value="Fast Food">Fast Food</option>
+                    <option value="Fusion Food">Fusion Food</option>
+                    <option value="Street Food">Street Food</option>
+                </select>
+
+                <button type="button">Search</button>
+            </div>
+            <div class="results-section" id="results"></div>
+        </div>
+
+        <!-- Button to navigate back to home page -->
+        <div class="back-home-container">
+            <a href="home.html" class="back-home">
+                <i class="fas fa-home"></i>
+            </a>
+        </div>
+
+        <!-- baru -->
+        <div id="trending-restaurants" class="trending-section">
+            <h2>Trending Restaurants</h2>
+            <div class="restaurant-item">
+                <img src="TS1.jpg" alt="Trending 1" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/82Tx2RU">Tip Top Restaurant</a></h3>
+                    <p>Established in 1934, this classic restaurant serves a mix of Indonesian and Western cuisines in a nostalgic setting.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS2.png" alt="Trending 2" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/bPXXMiP">Penthouse on 19th</a></h3>
+                    <p>A rooftop dining experience offering spectacular city views and a menu featuring modern fusion dishes.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS3.png" alt="Trending 3" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/JgY9Usk">Sari Laut Nelayan</a></h3>
+                    <p>A seafood lover’s paradise, known for its fresh catch of the day and signature grilled dishes.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS4.png" alt="Trending 4" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/yBNheEN">BISTRONOMIX</a></h3>
+                    <p>A trendy bistro combining a stylish ambiance with a menu of international comfort foods and creative cocktails.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS5.png" alt="Trending 5" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/iKFdK4V">Ji Long Chinese Restaurant</a></h3>
+                    <p>Specializing in authentic Chinese cuisine, this restaurant is celebrated for its dim sum and Peking duck.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS6.png" alt="Trending 6" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/5WzYNuQ">LKKR Urban Food House</a></h3>
+                    <p>A casual eatery known for its eclectic menu and urban-chic design, perfect for family or group dining.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS7.png" alt="Trending 7" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/ALmnno1">The Edge Restaurant</a></h3>
+                    <p>Located on a cliffside, offering stunning views and a curated menu featuring locally sourced ingredients.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS8.png" alt="Trending 8" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/k77pPYe">De Kapal Cafe And Resto</a></h3>
+                    <p>An ocean-themed cafe with a menu ranging from seafood platters to creative mocktails, great for all ages.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS9.png" alt="Trending 9" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/1xPCjiQ">Wajir Seafood</a></h3>
+                    <p>A popular local seafood spot offering affordable, delicious dishes in a casual, bustling setting.</p>
+                </div>
+            </div>
+            <div class="restaurant-item">
+                <img src="TS10.jpg" alt="Trending 10" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3><a href="https://g.co/kgs/R2kQS4D">Hi Korea Yangnyeom Chicken</a></h3>
+                    <p>A Korean-inspired eatery famous for its crispy fried chicken with bold flavors and traditional side dishes.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    <script src="restaurant.js" ></script>
+</body>
+</html>

@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NEMURESTO - Culinary Experience in Medan!">
+    <title>Home | NEMURESTO - Culinary Experience in Medan!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Menghindari scroll horizontal */
+            width: 100%; /* Pastikan layout penuh */
+            height: 100%; /* Pastikan layout penuh */
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #9e2d2d;
+        }
+
+        /* Header */
+        header {
+            background: rgb(82, 60, 26);
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background: #3b1515;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #540d0d;
+        }
+
+        /* Home Content Section */
+        
+        /* Hero Section Styling */
+/* Hero Section Styling */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Menggunakan tinggi viewport agar proporsional */
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100vh; /* Pastikan gambar memenuhi tinggi layar */
+    object-fit: cover; /* Gambar tidak terdistorsi */
+    filter: brightness(0.7); /* Memberikan efek gelap untuk teks terlihat jelas */
+}
+
+.hero-content {
+    position: absolute;
+    top: 40%; /* Mengatur posisi judul dan deskripsi ke tengah atas */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 80%; /* Memberikan lebar tetap agar teks rapi */
+}
+
+.hero-content h1 {
+    font-size: 60px; /* Membuat judul lebih besar */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Efek bayangan teks */
+}
+
+.hero-content p {
+    font-size: 24px; /* Membuat teks deskripsi lebih besar */
+    line-height: 1.8;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Bayangan teks */
+    margin-bottom: 50px; /* Menambahkan jarak bawah */
+}
+
+/* Hero Buttons Styling */
+.hero-buttons {
+    position: absolute;
+    bottom: -25%; /* Beri jarak 5% dari bagian bawah gambar */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Jarak antara kedua tombol */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.hero-buttons .btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+}
+
+.hero-buttons .btn:hover {
+    background-color: #c9302c; /* Warna tombol saat hover */
+}
+
+/* Tambahan Styling untuk Hero Section */
+.hero {
+    position: relative;
+    height: 100vh; /* Pastikan gambar memenuhi tinggi viewport */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+/* Tambahan Styling untuk Jarak */
+.hero-text {
+    margin-bottom: 100px; /* Tambahkan jarak antara teks dan tombol */
+}
+
+/* Hero Text Styling */
+.hero-text {
+    position: absolute;
+    top: 25%; /* Posisi kalimat di atas */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Container for the restaurant cards */
+.restaurant-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    width: 100%; /* Ensures card takes full width */
+    box-sizing: border-box;
+}
+
+/* Aligning the restaurant info (name, phone) */
+.restaurant-info {
+    flex: 1; /* Makes sure this takes up proportionate space */
+    max-width: 250px; /* Controls the width of the first column */
+    font-size: 1.1em;
+}
+
+/* Aligning the description */
+.restaurant-description {
+    flex: 2; /* Gives more space for the description */
+    font-size: 0.95em;
+    color: #666;
+    max-width: 500px; /* Controls the width of the description column */
+}
+
+/* Aligning the rating */
+.restaurant-rating {
+    flex: 0.5; /* Smaller space for rating */
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .restaurant-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .restaurant-description {
+        margin-top: 10px;
+        max-width: none; /* Removes the max-width constraint on mobile */
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px; /* Ubah ukuran teks untuk layar kecil */
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hero-buttons .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-buttons a {
+            padding: 15px 30px;
+            background-color: #873428;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #433922;
+        }
+
+        /* Catalog Section */
+        .catalog-container {
+        display: flex;
+        justify-content: center; /* Pusatkan kartu */
+        flex-wrap: wrap; /* Izinkan kartu membuat baris baru */
+        gap: 15px; /* Jarak antar kartu */
+        padding: 30px 0; /* Padding atas dan bawah */
+        background-color: #f8f8f8;
+    }
+
+        .catalog-item {
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: calc(33.33% - 15px); /* Pastikan kartu memenuhi baris */
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Pusatkan elemen secara horizontal */
+        justify-content: space-between; /* Pastikan semua elemen memiliki ruang yang sama */
+        text-align: center;
+        min-height: 350px; /* Seragamkan tinggi kartu */
+    }
+
+        .catalog-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .catalog-item i {
+            font-size: 3rem;
+            color: #842c27;
+            margin-bottom: 30px;
+        }
+
+        .catalog-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 100px;
+        }
+
+        .catalog-item p {
+            font-size: 1rem;
+            margin-bottom: -30px;
+            color:#842c27;
+        }
+
+        .catalog-item a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #842c27;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .catalog-item a:hover {
+            background-color: #8b765a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8b765a;
+            color: #6b1b1b;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to NEMURESTO</h1>
+        <p>Your Culinary Adventure Starts Here</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="News.html">News</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <!-- Home Content -->
+    <section class="hero-section">
+        <div class="hero-section">
+            <div class="hero-image">
+                <img src="br1.jpg" alt="Culinary Spots in Medan">
+            </div>
+            <div class="hero-content">
+                <h1>Explore the Best Culinary Spots in Medan</h1>
+                <p>
+                    We bring you a handpicked selection of the top restaurants in Medan.
+                    From traditional dishes to modern cuisine, our curated list ensures that every meal
+                    is an experience to remember. Explore, dine, and enjoy the flavors that make Medan a culinary paradise.
+                </p>
+                <div class="hero-buttons">
+                    <a href="restaurants.html" class="btn">View Restaurants</a>
+                    <a href="News.html" class="btn">Check News</a>
+                </div>
+            </div>
+        </div>        
+    </section>
+
+<!-- Catalog Section -->
+<section class="catalog-container">
+    <div class="catalog-item">
+        <i class="fas fa-utensils"></i>
+        <h3>Explore for the best places to eat in Medan</h3>
+        <p>Explore a variety of dining options, from street food to fine dining, and discover the best culinary experiences in Medan.</p>
+        <a href="restaurants.html">Explore Now</a> <!-- Link updated -->
+    </div>
+
+    <div class="catalog-item">
+        <i class="fas fa-comments"></i>
+        <h3>See the latest reviews<br><br>
+        </h3>
+        <p>Read the latest reviews from our community and find out what locals and travelers recommend for a perfect meal in Medan.</p>
+        <a href="restaurants.html">Read Reviews</a>
+    </div>
+
+    <div class="catalog-item">
+        <i class="fas fa-heart"></i>
+        <h3>Best place to eat for date</h3>
+        <p>Looking for a romantic spot? We've curated the best restaurants in Medan perfect for a date night.</p>
+        <a href="#romantic">View Spots</a>
+    </div>
+</section>
+
+<style>
+/* CSS Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+/* Styling for feature categories */
+.feature-category {
+    margin: 40px auto;
+    width: 90%;
+}
+
+.feature-category h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #842c27;
+}
+
+.card-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    gap: 20px; /* Space between cards */
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #842c27 transparent;
+}
+
+.card {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    scroll-snap-align: start;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h4 {
+    font-size: 18px;
+    margin: 0;
+    color: #842c27;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #777;
+}
+.catalog-container {
+    display: flex;
+    justify-content: center; /* Pusatkan semua kartu */
+    flex-wrap: wrap; /* Izinkan kartu membentuk baris baru jika diperlukan */
+    gap: 100px; /* Kurangi jarak antar kartu */
+    padding: 30px 0; /* Kurangi padding atas dan bawah */
+    background-color: #f8f8f8;
+}
+
+.catalog-item {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: calc(33.33% - 10px); /* Pastikan kartu memenuhi lebar baris */
+    max-width: 300px;
+    display: flex;
+    flex-direction: column; /* Atur elemen dalam kartu secara vertikal */
+    justify-content: space-between; /* Buat tombol sejajar di bawah */
+    align-items: center; /* Pusatkan elemen secara horizontal */
+    text-align: center;
+    min-height: 300px; /* Tambahkan tinggi minimum untuk keseragaman */
+}
+
+.catalog-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.catalog-item p {
+    font-size: 1rem;
+    color: #842c27;
+    flex-grow: 1; /* Buat deskripsi fleksibel untuk menyesuaikan tinggi kartu */
+    margin-bottom: 20px;
+    text-align: justify; /* Buat teks rata kiri dan kanan */
+}
+
+.catalog-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #842c27;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.catalog-item a:hover {
+    background-color: #8b765a;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px); /* Tambahkan sedikit efek hover */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .catalog-container {
+        flex-direction: column; /* Kartu di-stack secara vertikal */
+        align-items: center; /* Pusatkan kartu */
+    }
+
+    .catalog-item {
+        width: 90%; /* Lebar kartu pada layar kecil */
+    }
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating span, .card a {
+    font-size: 14px;
+    color: #ff9529;
+}
+
+.card a {
+    color: #842c27;
+    text-decoration: none;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Stylish Scrollbar */
+.card-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background-color: #842c27;
+    border-radius: 10px;
+    border: 3px solid transparent;
+}
+
+/* Footer style (optional, if needed) */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #842c27;
+    color: white;
+    margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<!-- Sections for each feature -->
+<section id="features">
+<h2>Restaurant Features</h2>
+
+<!-- Trending Section -->
+<div class="feature-category" id="trending">
+    <h3>Trending Restaurants</h3>
+    <div class="card-container">
+        <!-- Trending Cards 1-10 -->
+<div class="card">
+    <img src="TS1.jpg" alt="Trending Spot 1">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/82Tx2RU" target="_blank">Tip Top Restaurant</a></h4>
+        <p>(061) 4514442</p>
+        <p>Established in 1934, Tip Top Restaurant is a historic gem in Medan, offering a delightful mix of Indonesian and European culinary classics.</p>
+        <div class="rating">
+            <span>⭐ 4.5/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS2.png" alt="Trending Spot 2">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/bPXXMiP" target="_blank">Penthouse on 19th</a></h4>
+        <p>0811-6060-0190</p>
+        <p>Experience luxury dining at its finest with Penthouse on 19th. This rooftop restaurant boasts an elegant setting, international menus, 
+            and breathtaking panoramic views of Medan’s skyline.</p>
+        <div class="rating">
+            <span>⭐ 4.7/5</span>
+        </div>
+    </div>
+
+</div>
+<div class="card">
+    <img src="TS3.png" alt="Trending Spot 3">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/JgY9Usk" target="_blank">Sari Laut Nelayan</a></h4>
+        <p>(061) 4525537</p>
+        <p>Famous for its fresh seafood, Sari Laut Nelayan delivers authentic local flavors with dishes like grilled fish, prawns, and the beloved crab in oyster sauce.</p>
+        <div class="rating">
+            <span>⭐ 4.6/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS4.png" alt="Trending Spot 4">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/yBNheEN" target="_blank">BISTRONOMIX</a></h4>
+        <p>(061) 4561662</p>
+        <p>Combining casual dining with modern decor, BISTRONOMIX serves a diverse range of Western and Asian cuisines.</p>
+        <div class="rating">
+            <span>⭐ 4.6/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS5.png" alt="Trending Spot 5">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/iKFdK4V" target="_blank">Ji Long Chinese Restaurant</a></h4>
+        <p>0812-3934-4698</p>
+        <p>This authentic Chinese eatery specializes in traditional Cantonese dishes, offering everything from dim sum to flavorful roasted meats.</p>
+        <div class="rating">
+            <span>⭐ 4.5/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS6.png" alt="Trending Spot 6">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/5WzYNuQ" target="_blank">LKKR (Lekker Urban Food House Putri Hijau)</a></h4>
+        <p>0811-6597-799</p>
+        <p>LKKR presents a vibrant and trendy space with a menu of urban-style comfort foods. From creative burgers to fusion desserts, 
+            it’s a hit among the younger crowd looking for Instagram-worthy dining.</p>
+        <div class="rating">
+            <span>⭐ 4.5/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS7.png" alt="Trending Spot 7">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/ALmnno1" target="_blank">The Edge Restaurant</a></h4>
+        <p>0811-6531-599</p>
+        <p>Known for its high-end dining and refined rooftop ambiance, The Edge Restaurant offers a premium menu with both international and local dishes.</p>
+        <div class="rating">
+            <span>⭐ 4.5/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS8.png" alt="Trending Spot 8">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/k77pPYe" target="_blank">De Kapal Cafe And Resto</a></h4>
+        <p>0811-6350-812</p>
+        <p>Shaped like a ship, De Kapal provides a unique dining experience with its nautically themed decor. 
+            The menu celebrates Indonesian cuisine, featuring bold flavors and hearty portions.</p>
+        <div class="rating">
+            <span>⭐ 4.4/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS9.png" alt="Trending Spot 9">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/1xPCjiQ" target="_blank">Wajir Seafood</a></h4>
+        <p>(061) 4573785</p>
+        <p>Renowned for its fresh seafood and vibrant atmosphere, Wajir Seafood serves beloved 
+            dishes like butter crab and grilled prawns, making it a paradise for seafood lovers.</p>
+        <div class="rating">
+            <span>⭐ 4.5/5</span>
+        </div>
+    </div>
+    
+</div>
+<div class="card">
+    <img src="TS10.jpg" alt="Trending Spot 10">
+    <div class="card-content">
+        <h4><a href="https://g.co/kgs/R2kQS4D" target="_blank">Hi Korea Yangnyeom Chicken</a></h4>
+        <p>0811-6571-226</p>
+        <p>Specializing in Korean fried chicken, this spot delivers crispy, juicy chicken coated in signature sauces. 
+            It’s a haven for fans of Korean comfort food.</p>
+        <div class="rating">
+            <span>⭐ 4.9/5</span>
+        </div>
+    </div>
+    
+        </div>
+    </div>
+</div>
+
+<!-- Romantic Spot Section -->
+<div class="feature-category" id="romantic">
+    <h3>Romantic Spots</h3>
+    <div class="card-container">
+        <!-- Romantic Cards 1-10 -->
+        <div class="card">
+            <img src="RC1.png" alt="Prime Steakhouse">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/p5HFZxA" target="_blank">Prime Steakhouse</a></h4>
+                <p>(061) 41006600</p>
+                <p>Offering a sophisticated and intimate setting, Prime Steakhouse is ideal for romantic evenings. 
+                    Indulge in expertly cooked steaks and fine wines while enjoying a cozy ambiance.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC2.png" alt="Le Chateau">
+            <div class="card-content">
+                <h4><a href="https://www.google.com/search?sca_esv=492959cb0fa9f70d&cs=0&output=search&kgmid=%2Fg%2F11smdpj9qy&q=Le%20Chateau&shndl=30&shem=uaasic&source=sh%2Fx%2Floc%2Funi%2Fm1%2F1&kgs=b6bf36b735ed483b" target="_blank">Le Chateau</a></h4>
+                <p>0811-6792-021</p>
+                <p>Le Chateau promises a regal dining experience with its elegant interiors and gourmet menu. 
+                    Perfect for couples seeking an upscale venue, it features exquisite French and international dishes.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC3.png" alt="The Upper Level">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/JZa2rH1" target="_blank">The Upper Level</a></h4>
+                <p>0811-6300-188</p>
+                <p>Located on a rooftop, The Upper Level combines exclusivity with stunning views of Medan’s cityscape. 
+                    Its contemporary menu and tranquil vibe make it an unparalleled choice for date nights.</p>
+                <div class="rating">
+                    <span>⭐ 4.7/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC4.png" alt="Oui Dining">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/RKzj92n" target="_blank">Oui Dining</a></h4>
+                <p>0811-6092-526</p>
+                <p>Oui Dining is a hidden gem for couples, offering refined French cuisine in a romantic setting. 
+                    The beautifully plated dishes and warm atmosphere ensure an unforgettable meal.</p>
+                <div class="rating">
+                    <span>⭐ 4.7/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC5.png" alt="Enchanté Dining">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/jaxxfbm" target="_blank">Enchanté Dining</a></h4>
+                <p>0813-2388-8193</p>
+                <p>Enchanté is an oasis of elegance, perfect for intimate dining. From its intricate decor to 
+                    a menu filled with European delights, it’s the ideal venue for celebrating special moments.</p>
+                <div class="rating">
+                    <span>⭐ 4.9/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC6.png" alt="Petite Terrasse">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/w7LG2un" target="_blank">Petite Terrasse</a></h4>
+                <p>0811-6192-526</p>
+                <p>A small yet charming eatery, Petite Terrasse offers an inviting space for intimate meals. 
+                    Its menu focuses on fresh, seasonal ingredients prepared with care.</p>
+                <div class="rating">
+                    <span>⭐ 4.9/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC7.png" alt="Marine Resto & Bar">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/Wfdntzr" target="_blank">Marine Resto & Bar</a></h4>
+                <p>(061) 4552933</p>
+                <p>This waterfront dining destination provides a serene and romantic atmosphere. 
+                    Enjoy fresh seafood or gourmet entrees while savoring the calming sounds of the water.</p>
+                <div class="rating">
+                    <span>⭐ 5.0/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC8.png" alt="O'Flahertys">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/QVtQ3xB" target="_blank">O'Flahertys</a></h4>
+                <p>(061) 7880690</p>
+                <p>Combining the charm of an Irish pub with a romantic twist, O'Flahertys features 
+                    hearty meals, cozy seating, and a welcoming atmosphere for couples.</p>
+                <div class="rating">
+                    <span>⭐ 4.4/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC9.png" alt="SOHO Capital Medan">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/jRoniuk" target="_blank">SOHO Capital Medan</a></h4>
+                <p>(061) 4555677</p>
+                <p>A chic and modern restaurant, SOHO Capital offers a lively yet intimate vibe. 
+                    With a menu ranging from sushi to pasta, it caters to varied tastes.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="RC10.png" alt="Higher Steps Dining">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/snnKZDZ" target="_blank">Higher Steps Dining</a></h4>
+                <p>0852-6500-2800</p>
+                <p>Known for its relaxed yet elegant setting, Higher Steps Dining is a go-to for couples 
+                    looking for quality food and a peaceful environment to unwind together.</p>
+                <div class="rating">
+                    <span>⭐ 4.3/5</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Hidden Gems Section -->
+<div class="feature-category" id="Hidden">
+    <h3>Hidden Gems</h3>
+    <div class="card-container">
+        <!-- Hidden Gems Cards 1-10 -->
+        <div class="card">
+            <img src="HG1.jpg" alt="I pick pasta">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/yraqc7k" target="_blank">I pick pasta</a></h4>
+                <p>0857-6737-4160</p>
+                <p>Tucked away in a quiet spot, I pick pasta is a sanctuary for Italian cuisine lovers. 
+                    The handmade pastas, paired with rich sauces, provide a culinary experience like no other.</p>
+                <div class="rating">
+                    <span>⭐ 4.7/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG2.png" alt="Nusa Dua Coffee & Resto">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/s1JJ2dZ" target="_blank">Nusa Dua Coffee & Resto</a></h4>
+                <p>0811-6333-086</p>
+                <p>Inspired by Balinese architecture and culture, Nusa Dua Coffee & Resto offers not only 
+                    delicious coffee but also an escape into a tropical paradise within Medan.</p>
+                <div class="rating">
+                    <span>⭐ 3.4/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG3.png" alt="Koffkin Coffee">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/8DX3W5D" target="_blank">Koffkin Coffee</a></h4>
+                <p>Koffkin Coffee is a small but inviting cafe known for its artisanal brews. 
+                    With its laid-back vibe and locally sourced beans, it’s a haven for coffee enthusiasts.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG4.png" alt="Earth Bake">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/khdB9eq" target="_blank">Earth Bake</a></h4>
+                <p>0812-6046-0798</p>
+                <p>For pastry lovers, Earth Bake is a delightful discovery. Its freshly baked bread and 
+                    unique desserts make it a top choice for sweet-toothed adventurers.</p>
+                <div class="rating">
+                    <span>⭐ 4.7/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG5.png" alt="Dapuraja Cafe & Roastery">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/zR2ybMV" target="_blank">Dapuraja Cafe & Roastery</a></h4>
+                <p>0812-6313-2818</p>
+                <p>This cafe blends traditional Indonesian flavors with modern coffee culture. 
+                    It’s a great place to enjoy hearty meals and expertly brewed coffee.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG6.png" alt="Lastcall Club">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/bv2xf9D" target="_blank">Lastcall Club</a></h4>
+                <p>0813-8818-8123</p>
+                <p>Known for its vibrant nightlife vibe, Lastcall Club offers a mix of creative cocktails and light bites. 
+                    It’s a hidden gem for those looking to relax and socialize.</p>
+                <div class="rating">
+                    <span>⭐ 4.3/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG7.png" alt="Wooden Space">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/CZuWXhd" target="_blank">Wooden Space</a></h4>
+                <p>0821-7421-1889</p>
+                <p>Featuring rustic wooden interiors, Wooden Space provides a cozy atmosphere perfect for 
+                    unwinding with friends or family over great food and drinks.</p>
+                <div class="rating">
+                    <span>⭐ 4.5/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG8.png" alt="Hidden Place">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/gRVNQMT" target="_blank">Hidden Place</a></h4>
+                <p>0878-1193-7226</p>
+                <p>True to its name, Hidden Place is a serene spot with an eclectic menu. 
+                    Its peaceful ambiance is ideal for a quiet getaway.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG9.png" alt="Kito Art Cafe & Resto">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/xtv6fqc" target="_blank">Kito Art Cafe & Resto</a></h4>
+                <p>(061) 8012135</p>
+                <p>Combining art and gastronomy, Kito Art Cafe is a visually stunning and flavorful experience, 
+                    with dishes that reflect its creative decor.</p>
+                <div class="rating">
+                    <span>⭐ 4.2/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="HG10.png" alt="Alligator Roastery">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/hrb5tDJ" target="_blank">Alligator Roastery</a></h4>
+                <p>0813-6222-3557</p>
+                <p>A coffee lover’s paradise, Alligator Roastery is known for its freshly roasted beans and 
+                    inviting space that’s perfect for both work and relaxation.</p>
+                <div class="rating">
+                    <span>⭐ 4.7/5</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- All You Can Eat Section -->
+<div class="feature-category" id="all-you-can-eat">
+    <h3>All You Can Eat</h3>
+    <div class="card-container">
+        <!-- All You Can Eat Cards 1-10 -->
+        <div class="card">
+            <img src="ALL1.png" alt="Shaburi & Kintan Buffet">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/BK1zU3b" target="_blank">Shaburi & Kintan Buffet</a></h4>
+                <p>0895-4127-88117</p>
+                <p>A top-tier Japanese buffet offering premium meat selections, Shaburi & Kintan Buffet is perfect for those who love a mix of shabu-shabu and yakiniku.</p>
+                <div class="rating">
+                    <span>⭐ 4.8/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL2.png" alt="Hanamasa Medan">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/tHH1P2J" target="_blank">Hanamasa Medan</a></h4>
+                <p>(061) 80510262</p>
+                <p>Renowned for its all-you-can-eat concept, Hanamasa Medan specializes in Japanese BBQ and sukiyaki. 
+                    Diners can enjoy an unlimited selection of high-quality meat, fresh vegetables, and savory broths.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL3.png" alt="Meatsuka">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/Ri1e594" target="_blank">Meatsuka</a></h4>
+                <p>0811-8223-900</p>
+                <p>As a paradise for meat enthusiasts, Meatsuka stands out with its wide array of perfectly marinated cuts, served in a cozy and casual setting.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL4.png" alt="Shaburi Kintan Centre Point">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/cwcMLAt" target="_blank">Shaburi Kintan Centre Point</a></h4>
+                <p>0895-3918-52424</p>
+                <p>Shaburi & Kintan Centre Point Medan offers all-you-can-eat shabu-shabu and yakiniku. 
+                    Enjoy premium meats in a modern, cozy setting..</p>
+                <div class="rating">
+                    <span>⭐ 5.0/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL5.png" alt="KAGAYAKU GRILL & SHABURI">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/hmPfGuZ" target="_blank">KAGAYAKU GRILL & SHABURI</a></h4>
+                <p> (061) 88803299</p>
+                <p>A fusion of Japanese grill and shabu-shabu, Kagayaku Grill & Shaburi invites diners to savor rich flavors and hearty portions. 
+                    The modern decor and excellent service make it a great spot for gatherings.</p>
+                <div class="rating">
+                    <span>⭐ 4.7/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL6.png" alt="Banthai Suki & BBQ">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/vfZS4qY" target="_blank">Banthai Suki & BBQ</a></h4>
+                <p>0821-8332-3616</p>
+                <p>Blending Thai BBQ traditions with sukiyaki-style hotpot, Banthai Suki & BBQ serves flavorful dishes prepared with authentic spices. 
+                    It’s an ideal place for exploring Thai culinary delights with friends and family.</p>
+                <div class="rating">
+                    <span>⭐ 4.2/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL7.png" alt="Steak 21">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/LwvqMy8" target="_blank">Steak 21</a></h4>
+                <p>(061) 62000730</p>
+                <p>Steak 21 combines the joy of steak dining with the value of all-you-can-eat options. 
+                    Their juicy and perfectly grilled steaks, paired with delightful sides, ensure an indulgent yet affordable dining experience.</p>
+                <div class="rating">
+                    <span>⭐ 4.2/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL8.png" alt="Sushi Tei Sun Plaza">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/mbh6LcN" target="_blank">Sushi Tei Sun Plaza</a></h4>
+                <p>(061) 4501196</p>
+                <p>A haven for sushi lovers, Sushi Tei offers a luxurious buffet experience with expertly crafted sushi, sashimi, and Japanese appetizers. </p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL9.png" alt="GAPYEONG Korean BBQ HM Joni">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/1ANZ4cX" target="_blank">GAPYEONG Korean BBQ HM Joni</a></h4>
+                <p>Dive into an authentic Korean BBQ feast at Gapyeong. This restaurant features well-marinated 
+                    meats and a variety of side dishes, creating a complete and satisfying Korean culinary journey.</p>
+                <div class="rating">
+                    <span>⭐ 4.5/5</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <img src="ALL10.png" alt="MASAKMASAK Steamboat Yakiniku">
+            <div class="card-content">
+                <h4><a href="https://g.co/kgs/MDnCccW" target="_blank">MASAKMASAK Steamboat Yakiniku</a></h4>
+                <p>0813-6206-0312</p>
+                <p>A perfect combination of steamboat and yakiniku, Masakmasak offers an interactive dining experience where diners can enjoy cooking their food at the table. 
+                    It’s a fun and delicious option for group dining.</p>
+                <div class="rating">
+                    <span>⭐ 4.6/5</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+        <!-- Rooftop Section -->
+        <div class="feature-category" id="rooftop">
+            <h3>Rooftop Restaurants</h3>
+            <div class="card-container">
+                <!-- Rooftop Cards 1-10 -->
+                <div class="card">
+                    <img src="ROOF1.png" alt="Tropical Rooftop">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/4nSBwZM" target="_blank">Tropical Rooftop</a></h4>
+                        <p> 0813-4358-0480</p>
+                        <p>Set against the backdrop of Medan’s stunning skyline, Tropical Rooftop is an excellent spot for enjoying scenic views. 
+                            The combination of light bites, refreshing drinks, and a laid-back atmosphere.</p>
+                        <div class="rating">
+                            <span>⭐ 4.3/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF2.png" alt="SKY the Oasis Rooftop Bar & Lounge">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/9QAwHDs" target="_blank">SKY the Oasis Rooftop Bar & Lounge</a></h4>
+                        <p>0813-7523-3298</p>
+                        <p>This luxurious lounge offers an unmatched experience with its panoramic views and chic decor. 
+                            Whether you’re here for cocktails or fine dining, SKY provides a stylish and unforgettable rooftop.</p>
+                        <div class="rating">
+                            <span>⭐ 4.8/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF3.png" alt="Level 02 Rooftop">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/6ovoKyW" target="_blank">Level 02 Rooftop</a></h4>
+                        <p>A trendy hotspot, Level 02 Rooftop is perfect for casual outings. 
+                            Enjoy delicious snacks, unique cocktails, and a cozy ambiance under the stars while soaking in the vibrant energy of the city.</p>
+                        <div class="rating">
+                            <span>⭐ 4.3/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF4.png" alt="The Edge Restaurant">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/Hyzw3py" target="_blank">The Edge Restaurant</a></h4>
+                        <P>0811-6531-599</P>
+                        <p>Known for its sophisticated ambiance, The Edge Restaurant combines rooftop dining with gourmet cuisine. 
+                            Its elegant setting and impeccable service make it a top choice for special celebrations.</p>
+                        <div class="rating">
+                            <span>⭐ 4.5/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF5.png" alt="Sirocco Rooftop Bistro">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/mcsSZ5q" target="_blank">Sirocco Rooftop Bistro</a></h4>
+                        <p>With its open-air seating and welcoming vibe, Sirocco Rooftop Bistro is a perfect blend of casual dining and refined flavors. 
+                            Its menu ranges from hearty mains to indulgent desserts.</p>
+                        <div class="rating">
+                            <span>⭐ 4.3/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF6.png" alt="LIMA Rooftop Bar">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/odjSDxG" target="_blank">LIMA Rooftop Bar</a></h4>
+                        <p>A favorite among locals, LIMA Rooftop Bar offers a laid-back vibe with a great selection of drinks and snacks. 
+                            The casual atmosphere and beautiful views make it a go-to spot for relaxing evenings.</p>
+                        <div class="rating">
+                            <span>⭐ 4.0/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF7.png" alt="Cello Skypool & Lounge">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/k8hCFNZ" target="_blank">Cello Skypool & Lounge</a></h4>
+                        <p>0822-7215-0000</p>
+                        <p>For a unique rooftop experience, Cello combines a poolside setting with a lounge ambiance. 
+                            Sip on refreshing drinks while enjoying the calming effect of water and sky views.</p>
+                        <div class="rating">
+                            <span>⭐ 4.1/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF8.png" alt="Kito Art Cafe & Resto">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/LtsnQuK" target="_blank">Kito Art Cafe & Resto</a></h4>
+                        <p>(061) 8012135</p>
+                        <p>An artistic haven perched on a rooftop, Kito Art Cafe is where culinary creativity meets aesthetic delight. 
+                            With its charming decor and exquisite menu, it’s an ideal spot for art and food lovers.</p>
+                        <div class="rating">
+                            <span>⭐ 4.2/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF9.png" alt="L7 Rooftop">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/4L4Bcz6" target="_blank">L7 Rooftop</a></h4>
+                        <p>0822-6740-3550</p>
+                        <p>With its modern design and five-star service, L7 Rooftop is a standout destination. 
+                            The exceptional food and breathtaking views promise an unforgettable rooftop dining experience.</p>
+                        <div class="rating">
+                            <span>⭐ 5.0/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="ROOF10.png" alt="Top Roof Cafe">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/uTwLgmx" target="_blank">Top Roof Cafe</a></h4>
+                        <p>Stylish and contemporary, Top Roof Cafe offers a mix of delicious food, aromatic coffee, and stunning panoramic views. 
+                            It’s perfect for both casual meet-ups and romantic dates.</p>
+                        <div class="rating">
+                            <span>⭐ 5.0/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Outdoor Section -->
+        <div class="feature-category" id="outdoor">
+            <h3>Outdoor Restaurants</h3>
+            <div class="card-container">
+                <!-- Outdoor Cards 1-10 -->
+                <div class="card">
+                    <img src="OUT1.png" alt="Dovers Cafe & Lounge">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/KJCc97S" target="_blank">Dovers Cafe & Lounge</a></h4>
+                        <p>0895-3284-36108</p>
+                        <p>Nestled in a serene setting, Dovers Cafe & Lounge features a beautifully designed outdoor space. 
+                            The cozy seating arrangements, surrounded by lush greenery.</p>
+                        <div class="rating">
+                            <span>⭐ 4.8/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT2.png" alt="Tengah People & Place">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/1VLvrZv" target="_blank">Tengah People & Place</a></h4>
+                        <p>0813-9982-6520</p>
+                        <p>A lively dining destination with an outdoor focus, Tengah People & Place combines vibrant decor with delicious menus.
+                            It’s a favorite for families and groups looking to enjoy good food in a cheerful environment.</p>
+                        <div class="rating">
+                            <span>⭐ 4.5/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT3.png" alt="The Cups & Co">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/wqZmtQd" target="_blank">The Cups & Co</a></h4>
+                        <p>0811-6393-300</p>
+                        <p>This outdoor cafe is known for its welcoming vibe and diverse menu. 
+                            Guests can enjoy freshly brewed coffee, delectable pastries, and hearty meals in a charming open-air setting.</p>
+                        <div class="rating">
+                            <span>⭐ 4.4/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT4.png" alt="DIMIGO">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/jFUvooB" target="_blank">DIMIGO</a></h4>
+                        <p> 0811-6363-690</p>
+                        <p>A modern and stylish venue, DIMIGO offers outdoor seating with an inviting atmosphere. 
+                            Its diverse menu includes everything from light bites to full-course meals.</p>
+                        <div class="rating">
+                            <span>⭐ 4.5/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT5.png" alt="Unboss Coffee">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/B6sejh3" target="_blank">Unboss Coffee</a></h4>
+                        <p>0878-7200-4689</p>
+                        <p>An oasis for coffee lovers, Unboss Coffee features an outdoor setup that blends tranquility with a warm and inviting ambiance.</p>
+                        <div class="rating">
+                            <span>⭐ 4.5/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT6.png" alt="Junction Café">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/rYfmcnc" target="_blank">Junction Café</a></h4>
+                        <p>0811-6581-127</p>
+                        <p>Offering spacious outdoor seating, Junction Café provides a comfortable and stylish environment. 
+                            Its creative menu and refreshing drinks make it a great spot for gatherings."</p>
+                        <div class="rating">
+                            <span>⭐ 4.6/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT7.png" alt="L'Tropico by Haban">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/3yKQfVu" target="_blank">L'Tropico by Haban</a></h4>
+                        <p>0812-8004-1590</p>
+                        <p>With a tropical-themed decor and relaxed vibe, L'Tropico offers an exotic dining experience. 
+                            The menu is filled with delightful dishes inspired by island flavors.</p>
+                        <div class="rating">
+                            <span>⭐ 4.1/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT8.png" alt="Ludoo Eatery">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/7Kmm1yY" target="_blank">Ludoo Eatery</a></h4>
+                        <p>A hidden gem for outdoor dining, Ludoo Eatery combines cozy seating with an appealing menu. 
+                            It’s an ideal place to enjoy a quiet meal amidst nature.</p>
+                        <div class="rating">
+                            <span>⭐ 4.0/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT9.png" alt="Jinjit Coffee and Bistro">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/kK86V3R" target="_blank">Jinjit Coffee and Bistro</a></h4>
+                        <p>This charming bistro blends outdoor charm with a creative menu. 
+                        Its vibrant atmosphere and excellent service make it a popular spot for casual dining.</p>
+                        <div class="rating">
+                            <span>⭐ 3.9/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <img src="OUT10.png" alt="Nusantara Healing & Chill">
+                    <div class="card-content">
+                        <h4><a href="https://g.co/kgs/gRn36gq" target="_blank">Nusantara Healing & Chill</a></h4>
+                        <p>0812-6093-1701</p>
+                        <p>A serene and culturally rich destination, Nusantara Healing & Chill invites guests to relax in its spacious outdoor area.
+                           Traditional dishes and soothing surroundings.</p>
+                        <div class="rating">
+                            <span>⭐ 3.6/5</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+<!-- Chat With Us Button -->
+<div class="chat-btn" onclick="openChat()">
+    <i class="fas fa-comments"></i>
+</div>
+
+<!-- Formulir Chat -->
+<div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+        <h3>Chat Support</h3>
+        <span onclick="closeChat()" class="close-btn">&times;</span>
+    </div>
+    <form id="chatForm" method="POST">
+        <input type="text" name="user_message" id="userMessage" placeholder="Type your message here..." required>
+        <button type="submit" class="send-btn">Send</button>
+    </form>
+    <!-- Area untuk menampilkan notifikasi -->
+    <div id="responseMessage" style="display: none; color: #651e15; margin-top: 10px;"></div> <!-- Notifikasi berhasil -->
+</div>
+
+<style>
+  
+
+/* Chat Button */
+.chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #651e15;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.chat-btn:hover {
+    background-color: #7f564a;
+}
+
+/* Chat Popup */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #fff;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: #511010;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.close-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-popup input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.send-btn {
+    background-color: #4a1713;
+    color: white;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 0 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.send-btn:hover {
+    background-color: #7f564a;
+}
+</style>
+
+<!-- Script for Chat -->
+<script>
+function openChat() {
+    document.getElementById('chatPopup').style.display = 'block';
+}
+
+function closeChat() {
+    document.getElementById('chatPopup').style.display = 'none';
+}
+</script>
+
+    <style>
+        /* Footer Styles */
+        footer {
+            background-color: #842c27; /* Background warna gelap */
+            color: white;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            text-align: left; /* Semua teks rata kiri */
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .line {
+            border-top: 1px solid #842c27;
+            margin: 20px 0;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .footer-bottom a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Horizontal styling for footer links */
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start; /* Align items to the left */
+        gap: 30px; /* Add spacing between items */
+    }
+
+    .footer-links ul li {
+        margin-right: 0; /* No additional margin since we're using gap */
+    }
+
+    .footer-links ul li a {
+        color: #fffcfb;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-links ul li a i {
+        margin-right: 8px; /* Space between icon and text */
+        font-size: 18px;
+    }
+
+    .footer-links ul li a:hover {
+        text-decoration: underline;
+        color: #842c27;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="footer-container">
+        <!-- Title -->
+        <div class="footer-column">
+            <h4>NEMURESTO® RESTAURANT MEDAN</h4>
+        </div>
+
+        <!-- Garis Horizontal -->
+        <div class="line"></div>
+
+        <!-- Links Section -->
+        <div class="footer-column">
+            <ul>
+                <li><a href="home.html">Overview</a></li>
+                <li><a href="restaurants.html">Flavour Medan</a></li>
+                <li><a href="#trending">Trending Restaurants</a></li>
+                <li><a href="#romantic">Romantic Spots</a></li>
+                <li><a href="#Hidden">Hidden Gems</a></li>
+                <li><a href="#all-you-can-eat">All You Can Eat</a></li>
+                <li><a href="#rooftop">Rooftop Restaurants</a></li>
+                <li><a href="#outdoor">Outdoor Restaurants</a></li>
+            </ul>
+        </div>
+
+        <!-- Garis Horizontal -->
+        <div class="line"></div>
+
+   <!-- Find Us Section -->
+<div class="footer-column">
+    <p style="color: white;">Find us at: 
+        <a href="http://blablablablabla.do" style="color: white;">blablablablabla.do</a>
+    </p>
+</div>
+
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- Links Section -->
+            <div class="footer-links">
+                <p>© 2024 Nemuresto LLC Semua hak dilindungi undang-undang.</p>
+                <ul>
+                    <li><a href="Terms.html">Terms of use</a></li>
+                    <li><a href="How_it_works.html">How it works</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="restaurants.html">Rating</a></li>
+                    <li><a href="javascript:void(0);" id="help-link" onclick="openChat()">Help</a></li>
+                </ul>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#chatForm").submit(function(event) {
+        event.preventDefault(); // Mencegah form melakukan submit biasa
+
+        var message = $("#userMessage").val(); // Ambil pesan dari input
+
+        $.ajax({
+            url: "save_message.php",  // Ganti dengan URL file PHP Anda
+            type: "POST",
+            data: { user_message: message },
+            success: function(response) {
+                // Menampilkan notifikasi berhasil
+                $("#responseMessage").text("Pesan berhasil dikirim!").show();
+
+                // Reset input field
+                $("#userMessage").val("");  // Bersihkan field setelah pesan dikirim
+            },
+            error: function() {
+                // Menampilkan error jika terjadi masalah
+                $("#responseMessage").text("Terjadi kesalahan, coba lagi!").css("color", "red").show();
+            }
+        });
+    });
+});
+</script>
+
+<!-- FontAwesome Icon Library for icons -->
+<script src="home.js" ></script>
+<script src="love.js" ></script>
+
+</body>
+</html>

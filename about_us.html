@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NEMURESTO</title>
+    <style>
+        /* Main Style for the About Section */
+        body {
+            font-family: "Georgia", serif;
+            background-color: #f8f5f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #3e3a39;
+        }
+
+        .about-section {
+            background-color: #eae0d5;
+            color: #3e3a39;
+            padding: 50px;
+            max-width: 1100px;
+            width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-header {
+            margin-bottom: 30px;
+        }
+
+        .about-header h1 {
+            font-size: 2.8em;
+            color: #6b3f38;
+            font-weight: bold;
+        }
+
+        .about-header p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Unique Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background-color: #d6c5b2;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(105, 53, 47, 0.3);
+        }
+
+        .feature-box h3 {
+            font-size: 1.4em;
+            color: #6b3f38;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .feature-box p {
+            font-size: 1em;
+            color: #4b4846;
+        }
+
+        /* Button for Light/Dark Mode */
+        .theme-toggle {
+            background-color: #6b3f38;
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Light Mode */
+        .about-section.light-mode {
+            background-color: #ffffff;
+            color: #3e3a39;
+        }
+
+        .about-section.light-mode .feature-box {
+            background-color: #f1e6dd;
+        }
+
+        .about-section.light-mode .feature-box h3 {
+            color: #6b3f38;
+        }
+
+        .about-section.light-mode .theme-toggle {
+            background-color: #8a4b45;
+            color: #ffffff;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-block;
+            background-color: #8a4b45;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .back-home:hover {
+            background-color: #6b3f38;
+        }
+    </style>
+</head>
+<body>
+
+<div class="about-section" id="about-us">
+    <div class="about-header">
+        <h1>About NEMURESTO</h1>
+        <p>NEMURESTO bridges fine dining and impeccable service, uniting the world's gastronomes with carefully curated culinary experiences.</p>
+    </div>
+
+    <!-- Unique Features Section -->
+    <div class="features">
+        <div class="feature-box">
+            <h3>Interactive Dining Experience</h3>
+            <p>Our platform guides guests to unique culinary spots with ease, filtering by cuisine, ambience, and dining occasion.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Verified Reviews</h3>
+            <p>Enjoy genuine, curated reviews from diners, enhancing each dining choice with trust and transparency.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Gastronomic Community</h3>
+            <p>A social space where enthusiasts share insights, recommendations, and cherished dining moments.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Light and Dark Mode</h3>
+            <p>Switch effortlessly between light and dark themes, customising your browsing for visual comfort.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Exclusive Promotions</h3>
+            <p>Access special offers and limited promotions, connecting diners to the finest deals available.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Personalised Recommendations</h3>
+            <p>Receive tailored suggestions based on preferences, turning each visit into a memorable culinary event.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Seamless Reservation System</h3>
+            <p>Enjoy a seamless booking experience with instant confirmations, allowing for a stress-free dining journey.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Elegant Aesthetic Design</h3>
+            <p>Our interface combines beauty with functionality, creating a visually captivating user experience.</p>
+        </div>
+    </div>
+
+    <!-- Toggle Button for Light/Dark Mode -->
+    <button onclick="toggleTheme()" class="theme-toggle">Switch to Light/Dark Mode</button>
+
+    <!-- Back to Home Button -->
+    <a href="home.html" class="back-home">Back to Home</a>
+</div>
+
+<script>
+    function toggleTheme() {
+        const aboutSection = document.getElementById("about-us");
+        aboutSection.classList.toggle("light-mode");
+    }
+</script>
+
+</body>
+</html>
